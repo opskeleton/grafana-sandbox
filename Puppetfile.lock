@@ -1,0 +1,54 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    nanliu-staging (1.0.3)
+    puppetlabs-apt (1.7.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-concat (1.1.2)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+    puppetlabs-inifile (1.2.0)
+    puppetlabs-stdlib (4.5.1)
+
+GIT
+  remote: git://github.com/echocat/puppet-grafana.git
+  ref: master
+  sha: 003fc3221295b5d141372974a542d4aeccc4a03b
+  specs:
+    echocat-grafana (1.1.0)
+      puppetlabs-stdlib (>= 3.2.0)
+
+GIT
+  remote: git://github.com/elasticsearch/puppet-elasticsearch.git
+  ref: master
+  sha: 6bfbf37760ec2cbdc5632ff81c976c1bff23f123
+  specs:
+    elasticsearch-elasticsearch (0.9.0)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+
+GIT
+  remote: git://github.com/jfryman/puppet-nginx.git
+  ref: master
+  sha: a19cb94f2398d0b9609a04db2ec9a0071c565004
+  specs:
+    jfryman-nginx (0.2.2)
+      puppetlabs-apt (< 2.0.0, >= 1.0.0)
+      puppetlabs-concat (< 2.0.0, >= 1.1.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+
+GIT
+  remote: git://github.com/justindowning/puppet-influxdb.git
+  ref: master
+  sha: 8daecf4644d935aaad4b6698d0eefb2d1d858d6a
+  specs:
+    justindowning-influxdb (0.3.0)
+      nanliu-staging (>= 0.4.0)
+      puppetlabs-inifile (>= 1.0.0)
+
+DEPENDENCIES
+  echocat-grafana (>= 0)
+  elasticsearch-elasticsearch (>= 0)
+  jfryman-nginx (>= 0)
+  justindowning-influxdb (>= 0)
+  puppetlabs-apt (>= 0)
+  puppetlabs-stdlib (>= 0)
+
