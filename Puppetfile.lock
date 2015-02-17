@@ -33,7 +33,7 @@ GIT
   ref: master
   sha: 8fea379201973f17a0d18fc56446d0b562fc7388
   specs:
-    string-grafana (1.1.0)
+    strings-grafana (1.1.0)
       puppetlabs-stdlib (>= 3.2.0)
 
 DEPENDENCIES
@@ -41,5 +41,5 @@ DEPENDENCIES
   justindowning-influxdb (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-stdlib (>= 0)
-  string-grafana (>= 0)
+  strings-grafana (>= 0)
 
