@@ -10,22 +10,6 @@ FORGE
     puppetlabs-stdlib (4.5.1)
 
 GIT
-  remote: git://github.com/echocat/puppet-grafana.git
-  ref: master
-  sha: 003fc3221295b5d141372974a542d4aeccc4a03b
-  specs:
-    echocat-grafana (1.1.0)
-      puppetlabs-stdlib (>= 3.2.0)
-
-GIT
-  remote: git://github.com/elasticsearch/puppet-elasticsearch.git
-  ref: master
-  sha: 6bfbf37760ec2cbdc5632ff81c976c1bff23f123
-  specs:
-    elasticsearch-elasticsearch (0.9.0)
-      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
-
-GIT
   remote: git://github.com/jfryman/puppet-nginx.git
   ref: master
   sha: a19cb94f2398d0b9609a04db2ec9a0071c565004
@@ -44,11 +28,18 @@ GIT
       nanliu-staging (>= 0.4.0)
       puppetlabs-inifile (>= 1.0.0)
 
+GIT
+  remote: git://github.com/pulling-strings/puppet-grafana.git
+  ref: master
+  sha: 8fea379201973f17a0d18fc56446d0b562fc7388
+  specs:
+    string-grafana (1.1.0)
+      puppetlabs-stdlib (>= 3.2.0)
+
 DEPENDENCIES
-  echocat-grafana (>= 0)
-  elasticsearch-elasticsearch (>= 0)
   jfryman-nginx (>= 0)
   justindowning-influxdb (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-stdlib (>= 0)
+  string-grafana (>= 0)
 

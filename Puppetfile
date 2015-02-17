@@ -4,8 +4,8 @@ mod 'puppetlabs/stdlib'
 
 mod 'puppetlabs/apt'
 
-mod 'echocat/grafana', 
-  :git => 'git://github.com/echocat/puppet-grafana.git'
+mod 'string/grafana', 
+  :git => 'git://github.com/pulling-strings/puppet-grafana.git'
 
 mod 'justindowning/influxdb', 
   :git => 'git://github.com/justindowning/puppet-influxdb.git'
