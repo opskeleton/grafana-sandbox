@@ -1,10 +1,5 @@
 node default {
 
-  class { 'elasticsearch':
-    manage_repo  => true,
-    repo_version => '1.4'
-  }
-
   include nginx
 
   nginx::resource::vhost { 'grafana.local':
@@ -13,13 +8,12 @@ node default {
   } ->
 
   class {'grafana':
-    influxdb_host         => 'localhost',
+    influxdb_host         => $ipaddress_eth1,
     influxdb_dbpath       => '/db/metrics',
     influxdb_user         => 'root',
     influxdb_pass         => 'root',
     influxdb_grafana_user => 'root',
     influxdb_grafana_pass => 'root',
-    elasticsearch_host    => 'localhost',
   }
 
   class {'influxdb': }
