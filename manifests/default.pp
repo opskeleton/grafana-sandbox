@@ -17,4 +17,12 @@ node default {
   }
 
   class {'influxdb': }
+
+  class {'influxdb::root':
+    next_pass => 'foobar'
+  }
+
+  influxdb::database {'metrics':
+    ensure => present,
+  }
 }
