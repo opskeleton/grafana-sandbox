@@ -22,6 +22,7 @@ RSpec.configure do |c|
 	run("vagrant destroy #{c.host} -f")
       
 	run("vagrant up #{c.host}")
+	run("vagrant reload #{c.host} --provision")
       config = `vagrant ssh-config #{c.host}`
       sshhost =  sshuser = ''
       if config != ''
