@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
 
     node.vm.box = 'ubuntu-14.04.1_puppet-3.7.3' 
     node.vm.network :public_network, :bridge => bridge
+    node.vm.network :private_network, ip: '192.168.1.25'
     node.vm.hostname = 'grafana.local'
 
     node.vm.provider :virtualbox do |vb|
