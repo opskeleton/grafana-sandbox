@@ -4,7 +4,7 @@ FORGE
     nanliu-staging (1.0.3)
     puppetlabs-apt (1.7.0)
       puppetlabs-stdlib (>= 2.2.1)
-    puppetlabs-concat (1.1.2)
+    puppetlabs-concat (1.2.0)
       puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
     puppetlabs-inifile (1.2.0)
     puppetlabs-stdlib (4.5.1)
@@ -20,15 +20,6 @@ GIT
       puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
 
 GIT
-  remote: git://github.com/justindowning/puppet-influxdb.git
-  ref: master
-  sha: 8daecf4644d935aaad4b6698d0eefb2d1d858d6a
-  specs:
-    justindowning-influxdb (0.3.0)
-      nanliu-staging (>= 0.4.0)
-      puppetlabs-inifile (>= 1.0.0)
-
-GIT
   remote: git://github.com/pulling-strings/puppet-grafana.git
   ref: master
   sha: 8fea379201973f17a0d18fc56446d0b562fc7388
@@ -36,10 +27,19 @@ GIT
     strings-grafana (1.1.0)
       puppetlabs-stdlib (>= 3.2.0)
 
+GIT
+  remote: git://github.com/pulling-strings/puppet-influxdb.git
+  ref: master
+  sha: aa40fa2925ddbabb93c9d2b5e2afce4d90234604
+  specs:
+    strings-influxdb (0.3.0)
+      nanliu-staging (>= 0.4.0)
+      puppetlabs-inifile (>= 1.0.0)
+
 DEPENDENCIES
   jfryman-nginx (>= 0)
-  justindowning-influxdb (>= 0)
   puppetlabs-apt (>= 0)
   puppetlabs-stdlib (>= 0)
   strings-grafana (>= 0)
+  strings-influxdb (>= 0)
 
