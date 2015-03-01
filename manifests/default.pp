@@ -30,9 +30,15 @@ node default {
     ensure => present
   }
 
+  class{'influxdb::collectd': }
+
+
   include collectd
 
   collectd::plugin::network::server{'localhost':
-      port => 25826,
+      port => '25826'
   }
+
+  class { 'collectd::plugin::cpu': }
+
 }
