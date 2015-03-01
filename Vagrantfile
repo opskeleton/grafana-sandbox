@@ -20,19 +20,26 @@ Vagrant.configure("2") do |config|
     env ||= 'dev'
 
     node.vm.box = 'ubuntu-14.04.1_puppet-3.7.3' 
-    node.vm.network :public_network, :bridge => bridge
-    node.vm.network :private_network, ip: '192.168.1.25'
-    node.vm.hostname = 'grafana.local'
+    
+    node.vm.provider :virtualbox do |vb,override|
+	vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
+	override.vm.network :public_network, :bridge => bridge
+	override.vm.network :private_network, ip: '192.168.1.25'
+	override.vm.hostname = 'grafana.local'
+    end
 
-    node.vm.provider :virtualbox do |vb|
-      vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
+    node.vm.provider :libvirt do |domain|
+	domain.uri = 'qemu+unix:///system'
+	domain.host = "grafana.local"
+	domain.memory = 2048
+	domain.cpus = 2
     end
 
     node.vm.provision :shell, :inline => update
     node.vm.provision :puppet do |puppet|
-      puppet.manifests_path = 'manifests'
-      puppet.manifest_file  = 'default.pp'
-      puppet.options = "--modulepath=/vagrant/modules:/vagrant/static-modules --hiera_config /vagrant/hiera_vagrant.yaml --environment=#{env}"
+	puppet.manifests_path = 'manifests'
+	puppet.manifest_file  = 'default.pp'
+	puppet.options = "--modulepath=/vagrant/modules:/vagrant/static-modules --hiera_config /vagrant/hiera_vagrant.yaml --environment=#{env}"
 
     end
   end

@@ -27,7 +27,12 @@ node default {
   } ->
 
   influxdb::database {'metrics':
-    ensure => present,
-    pass   => $pass
+    ensure => present
+  }
+
+  include collectd
+
+  collectd::plugin::network::server{'localhost':
+      port => 25826,
   }
 }
