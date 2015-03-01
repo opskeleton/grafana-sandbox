@@ -28,9 +28,10 @@ Vagrant.configure("2") do |config|
 	override.vm.hostname = 'grafana.local'
     end
 
-    node.vm.provider :libvirt do |domain|
+    node.vm.provider :libvirt do |domain,override|
+      override.vm.network :public_network, :dev => "eth0", :mode => 'bridge'
 	domain.uri = 'qemu+unix:///system'
-	domain.host = "grafana.local"
+	domain.host = 'grafana.local'
 	domain.memory = 2048
 	domain.cpus = 2
     end
