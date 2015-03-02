@@ -27,11 +27,9 @@ node default {
   } ->
 
   influxdb::database {'metrics':
-    ensure => present
+    ensure => present,
+    pass   => $pass
   }
-
-  class{'influxdb::collectd': }
-
 
   include collectd
 
