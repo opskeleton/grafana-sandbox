@@ -10,7 +10,6 @@ node default {
   } ->
 
   class {'grafana':
-    influxdb_host         => $ipaddress_eth1,
     influxdb_dbpath       => '/db/metrics',
     influxdb_user         => 'root',
     influxdb_pass         => $pass,
