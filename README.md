@@ -1,10 +1,12 @@
 # Intro 
-This project manages a sandbox for [grafana](http://grafana.org/)
+This project manages a sandbox for setting up [grafana](http://grafana.org/) dashboards for [collectd](https://collectd.org/) persisted into [influxdb](http://influxdb.com/).
 
 # Usage
 ```bash
   # install require gems, puppet modules and fire up vagrant
   $ ./boot.sh
+  # in order to create DBs and set root u/p you need to run provision twice.
+  $ vagrant provision
 ```
 
 # Copyright and license
