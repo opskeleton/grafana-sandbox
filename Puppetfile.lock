@@ -33,7 +33,7 @@ GIT
 GIT
   remote: git://github.com/pulling-strings/puppet-influxdb.git
   ref: master
-  sha: 610afc08f5fced7c0a650f552c9709c0096a0bf1
+  sha: c5bbb0ef6a7a17aa008314279ca7a9d6fc2074ea
   specs:
     strings-influxdb (0.3.0)
       nanliu-staging (>= 0.4.0)
