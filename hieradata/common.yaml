@@ -1,1 +1,5 @@
 ---
+influxdb::config::collectd_enabled: true
+influxdb::config::collectd_database: 'metrics'
+influxdb::config::collectd_port: 25826
+
