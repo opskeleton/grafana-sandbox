@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
     env  = ENV['PUPPET_ENV']
     env ||= 'dev'
 
-    node.vm.box = 'ubuntu-14.04.1_puppet-3.7.3' 
+    node.vm.box = 'ubuntu-14.10_puppet-3.7.3' 
     
     node.vm.provider :virtualbox do |vb,override|
 	vb.customize ['modifyvm', :id, '--memory', 2048, '--cpus', 2]
