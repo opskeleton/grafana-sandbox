@@ -30,6 +30,12 @@ node default {
     pass   => $pass
   }
 
+  influxdb::database {'grafana':
+    ensure => present,
+    pass   => $pass
+  }
+
+
   include collectd
 
   collectd::plugin::network::server{'localhost':
